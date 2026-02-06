@@ -1,0 +1,23 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      topic: DEMO
+      group-id: kafka-consumer-demo
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.rayoleary.kafkaconsumerdemo.messaging.dto
+        spring.json.value.default.type: com.rayoleary.kafkaconsumerdemo.messaging.dto.DemoEventPayload
+    listener:
+      ack-mode: manual
+
+  mongodb:
+    host: localhost
+    port: 27017
+    database: kafkaconsumerdemo
+    username: admin
+    password: admin123
+    authentication-database: admin
