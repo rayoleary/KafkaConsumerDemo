@@ -37,6 +37,7 @@ docker-compose up -d
 ```bash
 cd dev/docker/kafka
 docker-compose up -d
+./producer.sh
 ```
 
 This will:
