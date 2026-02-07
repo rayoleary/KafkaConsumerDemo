@@ -20,7 +20,8 @@ public class DemoTopicConsumer {
          ConsumerRecord<String, DemoEventPayload> record,
          Acknowledgment ack) {
 
-      log.debug("Received message: {}", record.value());
+      log.info("Received message: {}", record.value());
       ack.acknowledge();
+      log.info("Acknowledged message: {}", record.value());
    }
 }
